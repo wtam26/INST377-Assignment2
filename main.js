@@ -18,6 +18,7 @@ for (let i = 1; i < 6; i++) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', 'images/pic' + i + '.jpg');
     thumbBar.appendChild(newImage);
+    newImage.addEventListener("click", onClickImage);
 
     /*Willie 4th edition - figuring out onClick handler
     Failed editions - reference for partner to not try these attempts
@@ -30,6 +31,11 @@ for (let i = 1; i < 6; i++) {
        displayedImage.src = tempSrc;
    }
    */
+}
+
+function onClickImage(newImage){
+    const image = newImage.target.getAttribute("src");
+    displayedImage.setAttribute("src", image);
 }
 
 
